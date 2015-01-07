@@ -32,12 +32,14 @@ public class TryWithResourcesStatementTest {
 
 	@Test
 	public void test_throwSuppressedException() throws Exception {
+		String expectedTryCatchResMessage = "read line ex";
+		String expectedSuppressedMessage = "close ex";
 		try {
 			this.statement.throwSuppressedException(TEST_FILE_PATH);
 		} catch (Exception e) {
-			e.printStackTrace();
+			assertEquals(expectedTryCatchResMessage, e.getMessage());
 			for (Throwable t : e.getSuppressed()) {
-				System.out.println(t.getMessage());
+				assertEquals(expectedSuppressedMessage, t.getMessage());
 			}
 		}
 	}
