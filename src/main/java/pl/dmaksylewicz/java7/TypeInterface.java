@@ -7,17 +7,18 @@ import java.util.Map;
 
 public class TypeInterface {
 
-	public Map<Integer, Integer> getDiamondMap() {
-		Map<Integer, Integer> map = new HashMap<>();
-		map.put(1, 1);
-		map.put(2, 2);
+	public Map<Integer, String> getIdToNameMap() {
+		Map<Integer, String> map = new HashMap<>();
+		map.put(1, "Bonifacy");
+		map.put(2, "Baltazar");
 		return map;
 	}
 
-	public List<Integer> getDiamondList() {
+	public List<Integer> getIds() {
 		List<Integer> list = new ArrayList<>();
-		list.add(1);
-		list.add(2);
+		list.add(111);
+		list.add(222);
+		list.add(333);
 		return list;
 	}
 }

@@ -3,33 +3,30 @@ package pl.dmaksylewicz.java7;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 
 public class SwitchStatementTest {
 
-	private SwitchStatement statements;
+	private SwitchStatement statement;
 
 	@Before
 	public void setUp() {
-		statements = new SwitchStatement();
+		statement = new SwitchStatement();
 	}
 
-	public void test_valueOfTrue() {
-		String toConvert = "true";
-		boolean result = statements.valueOf(toConvert);
-		assertTrue(result);
-	}
-
-	public void test_valueOfFalse() {
-		String toConvert = "false";
-		boolean result = statements.valueOf(toConvert);
-		assertFalse(result);
+	@Test
+	public void test_languagePopularity() {
+		String[] languages = new String[] { "java", "scala", "ruby" };
+		int[] expectedPopularity = new int[] { 5, 3, 2 };
+		for (int i = 0; i < expectedPopularity.length; i++) {
+			int result = statement.getLanguagePopularity(languages[i]);
+			assertEquals(expectedPopularity[i], result);
+		}
 	}
 
 	@Test(expected = RuntimeException.class)
 	public void test_valueOfWhenUnknown() {
-		String toConvert = "fake";
-		statements.valueOf(toConvert);
+		String language = "fake";
+		statement.getLanguagePopularity(language);
 	}
 }

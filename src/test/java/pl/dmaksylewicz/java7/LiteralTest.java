@@ -15,16 +15,16 @@ public class LiteralTest {
 	}
 
 	@Test
-	public void test_getBinaryLiteral() throws Exception {
+	public void test_binaryValue() throws Exception {
 		byte expected = 33;
-		byte result = literals.getBinaryLiteral();
+		byte result = literals.getBinaryValue();
 		assertEquals(expected, result);
 	}
 
 	@Test
-	public void test_getLiteralWithUnderscore() throws Exception {
+	public void test_getWellFormattedValues() throws Exception {
 		long[] expected = new long[] { 111222333L, 12L, 10 };
-		long[] result = literals.getLiteralsWithUnderscore();
+		long[] result = literals.getWellFormattedValues();
 		for (int i = 0; i < result.length; i++) {
 			assertEquals(expected[i], result[i]);
 		}

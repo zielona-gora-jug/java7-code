@@ -9,38 +9,57 @@ public class TryWithResourcesStatementTest {
 
 	private static final String TEST_FILE_PATH = "./src/main/resources/test.txt";
 
-	private TryWithResourcesStatement statement;
+	private TryWithResourcesStatement resource;
 
 	@Before
 	public void setUp() {
-		this.statement = new TryWithResourcesStatement();
+		this.resource = new TryWithResourcesStatement();
 	}
 
 	@Test
-	public void test_readFirstLineWhenOneResource() throws Exception {
+	public void test_readSingleLine() throws Exception {
 		String expected = "java user group zg";
-		String result = this.statement.readFirstLineWhenOneRecource(TEST_FILE_PATH);
+		String result = this.resource.readSingleLine(TEST_FILE_PATH);
 		assertEquals(expected, result);
 	}
 
-	@Test
-	public void test_readFirstLineWhenMoreResources() throws Exception {
-		String expected = "java user group zg";
-		String result = this.statement.readFirstLineWhenMoreResources(TEST_FILE_PATH);
-		assertEquals(expected, result);
-	}
+	// Java < 7
 
 	@Test
-	public void test_throwSuppressedException() throws Exception {
-		String expectedTryCatchResMessage = "read line ex";
+	public void test_throwExceptionBefore() throws Exception {
+		// String expectedTryCatchMessage = "read line ex";
 		String expectedSuppressedMessage = "close ex";
 		try {
-			this.statement.throwSuppressedException(TEST_FILE_PATH);
+			this.resource.throwExceptionWhenReadSingleLineBefore(TEST_FILE_PATH);
 		} catch (Exception e) {
-			assertEquals(expectedTryCatchResMessage, e.getMessage());
+			// WTF ?! where is thrown "read line ex" ?!
+			assertEquals(expectedSuppressedMessage, e.getMessage());
 			for (Throwable t : e.getSuppressed()) {
 				assertEquals(expectedSuppressedMessage, t.getMessage());
 			}
 		}
+	}
+
+	// Java >= 7
+
+	@Test
+	public void test_throwExceptionAfter() throws Exception {
+		String expectedTryCatchMessage = "read line ex";
+		String expectedSuppressedMessage = "close ex";
+		try {
+			this.resource.throwExceptionWhenReadSingleLineAfter(TEST_FILE_PATH);
+		} catch (Exception e) {
+			assertEquals(expectedTryCatchMessage, e.getMessage());
+			for (Throwable t : e.getSuppressed()) {
+				assertEquals(expectedSuppressedMessage, t.getMessage());
+			}
+		}
+	}
+
+	@Test
+	public void test_pingStatusAndMyAutoCloseable() throws Exception {
+		int expected = 1;
+		int result = this.resource.ping();
+		assertEquals(expected, result);
 	}
 }

@@ -11,26 +11,27 @@ import static org.junit.Assert.assertEquals;
 
 public class TypeInterfaceTest {
 
-	private TypeInterface typeInterfaces;
+	private TypeInterface collector;
 
 	@Before
 	public void setUp() {
-		typeInterfaces = new TypeInterface();
+		collector = new TypeInterface();
 	}
 
-	public void test_getDiamondMap() {
-		Map<Integer, Integer> expected = new HashMap<Integer, Integer>();
-		expected.put(1, 1);
-		expected.put(2, 2);
-		Map<Integer, Integer> result = typeInterfaces.getDiamondMap();
+	public void test_mapOfIdsToName() {
+		Map<Integer, String> expected = new HashMap<>();
+		expected.put(1, "Bonifacy");
+		expected.put(2, "Baltazar");
+		Map<Integer, String> result = collector.getIdToNameMap();
 		assertEquals(expected, result);
 	}
 
 	public void test_getDiamondList() {
 		List<Integer> expected = new ArrayList<>();
-		expected.add(1);
-		expected.add(2);
-		List<Integer> result = typeInterfaces.getDiamondList();
+		expected.add(111);
+		expected.add(222);
+		expected.add(333);
+		List<Integer> result = collector.getIds();
 		assertEquals(expected, result);
 	}
 }

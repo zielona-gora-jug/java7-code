@@ -2,12 +2,12 @@ package pl.dmaksylewicz.java7;
 
 public class Literal {
 
-	public byte getBinaryLiteral() {
+	public byte getBinaryValue() {
 		return 0b00100001;
 	}
 
-	public long[] getLiteralsWithUnderscore() {
-		// 0_12 is an octal literal equals to 10 as decimal
+	public long[] getWellFormattedValues() {
+		// 0_12 is octal literal = 10 in decimal
 		return new long[] { 111_222_333L, 1______2L, 0_12 };
 	}
 }

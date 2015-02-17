@@ -2,14 +2,16 @@ package pl.dmaksylewicz.java7;
 
 public class SwitchStatement {
 
-	public boolean valueOf(String toConvert) {
-		switch (toConvert) {
-		case "true":
-			return true;
-		case "false":
-			return false;
+	public int getLanguagePopularity(String language) {
+		switch (language) {
+		case "java":
+			return 5;
+		case "scala":
+			return 3;
+		case "ruby":
+			return 2;
 		default:
-			throw new RuntimeException("Unknown value " + toConvert);
+			throw new RuntimeException("Requested unknown language -> " + language);
 		}
 	}
 }
