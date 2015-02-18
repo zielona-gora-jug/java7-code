@@ -7,7 +7,7 @@ import static org.junit.Assert.assertEquals;
 
 public class TryWithResourcesStatementTest {
 
-	private static final String TEST_FILE_PATH = "./src/main/resources/test.txt";
+	private static final String TEST_FILE_PATH = "./src/main/resources/test1.txt";
 
 	private TryWithResourcesStatement resource;
 

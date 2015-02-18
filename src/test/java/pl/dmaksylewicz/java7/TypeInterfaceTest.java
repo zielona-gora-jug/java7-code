@@ -26,7 +26,7 @@ public class TypeInterfaceTest {
 		assertEquals(expected, result);
 	}
 
-	public void test_getDiamondList() {
+	public void test_getIdsAsList() {
 		List<Integer> expected = new ArrayList<>();
 		expected.add(111);
 		expected.add(222);

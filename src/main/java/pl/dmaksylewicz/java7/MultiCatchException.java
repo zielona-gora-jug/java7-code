@@ -44,12 +44,18 @@ public class MultiCatchException {
 	}
 
 	public class MyFirstException extends Exception {
+
+		private static final long serialVersionUID = -7054660544024679135L;
+
 		public MyFirstException(String string) {
 			super(string);
 		}
 	}
 
 	public class MySecondException extends Exception {
+
+		private static final long serialVersionUID = -3401316128851239636L;
+
 		public MySecondException(String string) {
 			super(string);
 		}
