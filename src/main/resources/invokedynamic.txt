@@ -1,0 +1,9 @@
+def addtwo(a, b)
+	a + b;
+end
+
+strongly typed:
+a + b
+
+weakly typed -> + is permitted in JVM, but not in Java language:
++(a, b)

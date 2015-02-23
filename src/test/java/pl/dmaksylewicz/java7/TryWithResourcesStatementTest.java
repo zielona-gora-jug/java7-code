@@ -4,11 +4,12 @@ import org.junit.Before;
 import org.junit.Test;
 
 import pl.dmaksylewicz.java7.syntax.TryWithResourcesStatement;
+
 import static org.junit.Assert.assertEquals;
 
 public class TryWithResourcesStatementTest {
 
-	private static final String TEST_FILE_PATH = "./src/main/resources/test1.txt";
+	private static final String TEST_FILE_PATH = "./src/main/resources/sample.txt";
 
 	private TryWithResourcesStatement resource;
 
