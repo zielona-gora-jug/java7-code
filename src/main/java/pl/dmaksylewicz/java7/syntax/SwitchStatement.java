@@ -1,4 +1,4 @@
-package pl.dmaksylewicz.java7;
+package pl.dmaksylewicz.java7.syntax;
 
 public class SwitchStatement {
 

@@ -3,9 +3,9 @@ package pl.dmaksylewicz.java7;
 import org.junit.Before;
 import org.junit.Test;
 
-import pl.dmaksylewicz.java7.MultiCatchException.MyFirstException;
-import pl.dmaksylewicz.java7.MultiCatchException.MySecondException;
-
+import pl.dmaksylewicz.java7.syntax.MultiCatchException;
+import pl.dmaksylewicz.java7.syntax.MultiCatchException.MyFirstException;
+import pl.dmaksylewicz.java7.syntax.MultiCatchException.MySecondException;
 import static org.junit.Assert.assertEquals;
 
 public class MultiCatchExceptionTest {

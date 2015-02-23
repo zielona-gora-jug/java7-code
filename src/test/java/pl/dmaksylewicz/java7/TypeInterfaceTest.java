@@ -7,6 +7,7 @@ import java.util.Map;
 
 import org.junit.Before;
 
+import pl.dmaksylewicz.java7.syntax.TypeInterface;
 import static org.junit.Assert.assertEquals;
 
 public class TypeInterfaceTest {

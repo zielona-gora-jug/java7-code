@@ -3,6 +3,7 @@ package pl.dmaksylewicz.java7;
 import org.junit.Before;
 import org.junit.Test;
 
+import pl.dmaksylewicz.java7.syntax.Literal;
 import static org.junit.Assert.assertEquals;
 
 public class LiteralTest {

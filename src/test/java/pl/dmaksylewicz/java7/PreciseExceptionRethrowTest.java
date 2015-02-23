@@ -6,6 +6,8 @@ import java.sql.SQLException;
 import org.junit.Before;
 import org.junit.Test;
 
+import pl.dmaksylewicz.java7.syntax.PreciseExceptionRethrow;
+
 public class PreciseExceptionRethrowTest {
 
 	private PreciseExceptionRethrow datasource;

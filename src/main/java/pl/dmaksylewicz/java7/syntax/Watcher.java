@@ -1,4 +1,4 @@
-package pl.dmaksylewicz.java7;
+package pl.dmaksylewicz.java7.syntax;
 
 import java.io.IOException;
 import java.nio.file.FileSystems;
