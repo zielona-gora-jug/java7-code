@@ -5,5 +5,5 @@ end
 strongly typed:
 a + b
 
-weakly typed -> + is permitted in JVM, but not in Java language:
+weakly typed -> + is permitted in JVM, but not in Java:
 +(a, b)
