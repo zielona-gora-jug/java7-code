@@ -10,15 +10,11 @@ import java.lang.invoke.MethodType;
 
 public class DynamicBootstrap {
 
-	public static void fire() {
-		System.out.println("dyna dyna dynamic...");
-	}
-
 	// an example implementation of bootstrap method
 	public static CallSite bootstrap(MethodHandles.Lookup caller, String name, MethodType type) throws IllegalAccessException, NoSuchMethodException {
 		MethodHandles.Lookup lookup = MethodHandles.lookup();
 		Class<?> clazz = lookup.lookupClass();
-		MethodHandle methodHandler = lookup.findStatic(clazz, "fire", MethodType.methodType(void.class));
+		MethodHandle methodHandler = lookup.findStatic(clazz, name, MethodType.methodType(void.class));
 		if (!type.equals(methodHandler.type())) {
 			methodHandler = methodHandler.asType(type);
 		}

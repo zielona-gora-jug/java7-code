@@ -7,3 +7,6 @@ a + b
 
 weakly typed -> + is permitted in JVM, but not in Java:
 +(a, b)
+
+http://docs.oracle.com/javase/7/docs/api/java/lang/invoke/package-summary.html
+http://www.javaworld.com/article/2860079/scripting-jvm-languages/invokedynamic-101.html
